@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .text2 {
+            position: relative;
+            width: 63%;
+            max-width: 586px;
+        }
+
+        .text2 .mask {
+            position: absolute;
+            width: 100%;
+            height: 95%;
+            top: 0;
+            left: 1px;
+            -webkit-mask-image: url(img/text3.png);
+        }
+
+        .text2 .mask i {
+            position: absolute;
+            height: 100%;
+            width: 20%;
+            left: 0;
+            top: 0;
+            background: -webkit-linear-gradient(left, #561214, #febaf7 50%, #ff0 90%, #561214) no-repeat 0 0;
+            animation: lightLine2 4s linear infinite;
+            -webkit-animation: lightLine2 4s linear infinite;
+            background-size: 100% 100%;
+        }
+
+        @keyframes lightLine2 {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(420%);
+            }
+        }
+
+        @-webkit-keyframes lightLine2 {
+            0% {
+                -webkit-transform: translateX(0);
+            }
+
+            100% {
+                -webkit-transform: translateX(420%);
+            }
+        }
+    </style>
+    <div class="text2" style="margin: 150px auto;">
+        <img src="img/text3.png" />
+        <div class="mask"><i></i></div>
+    </div>
+</body>
+
+</html>

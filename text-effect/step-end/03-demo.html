@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            --color1: #333;
+            width: 100px;
+            height: 100px;
+            background: conic-gradient(var(--color1) var(--pos), var(--color2) 0);
+            border-radius: 50%;
+
+            animation: circle1 1s linear, circle2 2s step-end, circle3 2s step-end;
+            animation-iteration-count: 2;
+        }
+
+        @keyframes circle1 {
+            to {
+                --pos: 100%;
+            }
+        }
+
+        @keyframes circle2 {
+            50% {
+                --color1: transparent;
+            }
+        }
+
+        @keyframes circle3 {
+            50% {
+                --color2: #333;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle"></div>
+    <script>
+        CSS.registerProperty({
+            name: '--color1',
+            syntax: '<color>',
+            initialValue: 'transparent',
+            inherits: true
+        });
+
+        CSS.registerProperty({
+            name: '--color2',
+            syntax: '<color>',
+            initialValue: 'transparent',
+            inherits: true
+        });
+
+        CSS.registerProperty({
+            name: '--pos',
+            syntax: '<length-percentage>',
+            initialValue: '0',
+            inherits: true
+        })
+    </script>
+</body>
+
+</html>
